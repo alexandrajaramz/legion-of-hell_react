@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import userData from './userData';
 import Page from './components/Page';
 
 class App extends React.Component {
@@ -8,11 +7,25 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      userData: userData,
+      userData: [],
+      attackDate: '',
       inputValue: ''
     }
 
     this.getInputValue = this.getInputValue.bind(this);
+  }
+
+  componentDidMount() {
+    const endpoint = 'https://raw.githubusercontent.com/Adalab/m3-tutoria-2/master/assets/data/bulk.json';
+
+    fetch(endpoint)
+      .then(response => response.json())
+      .then(results => {
+        this.setState({
+          userData: results.data,
+          attackDate: results.date
+        })
+      });
   }
 
   getInputValue (event) {
@@ -28,6 +41,7 @@ class App extends React.Component {
         userData={this.state.userData}
         getInputValue={this.getInputValue} 
         inputValue={this.state.inputValue}
+        attackDate={this.state.attackDate}
       />
     );
   }

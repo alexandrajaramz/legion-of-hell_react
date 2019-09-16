@@ -3,8 +3,8 @@ import React from 'react';
 class Filters extends React.Component {
     render() {
         return (
-            <form className="page__main-form">
-                <label for="email" className="form__label">
+            <form className="app__main-form">
+                <label htmlFor="email" className="form__label">
                     Introduce tu email para comprobar si estás en la base de datos:
                 </label>
                 <input 

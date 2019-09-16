@@ -29,7 +29,7 @@ class Footer extends React.Component {
 
     render() {
         return (
-            <footer className="page__footer">
+            <footer className="app__footer">
                 <p className="footer-text">loh(); || {this.state.time}</p>
             </footer>
         );
