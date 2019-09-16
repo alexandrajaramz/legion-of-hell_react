@@ -8,15 +8,26 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      userData: userData
+      userData: userData,
+      inputValue: ''
     }
 
+    this.getInputValue = this.getInputValue.bind(this);
+  }
+
+  getInputValue (event) {
+    const targetValue = event.currentTarget.value; 
+    this.setState ({
+      inputValue: targetValue
+    })
   }
 
   render() {
     return (
       <Page 
         userData={this.state.userData}
+        getInputValue={this.getInputValue} 
+        inputValue={this.state.inputValue}
       />
     );
   }
