@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 class Filters extends React.Component {
     render() {
@@ -17,6 +19,10 @@ class Filters extends React.Component {
             </form>
         );
     }
+}
+
+Filters.propTypes = {
+    getInputValue: PropTypes.func.isRequired
 }
 
 export default Filters;

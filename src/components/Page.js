@@ -4,6 +4,8 @@ import Filters from './Filters';
 import Status from './Status';
 import DataList from './DataList';
 import Footer from './Footer';
+import PropTypes from 'prop-types';
+
 
 class Page extends React.Component {
     render() {
@@ -22,6 +24,12 @@ class Page extends React.Component {
             </div>
         );
     }
+}
+
+Page.propTypes = {
+    userData: PropTypes.arrayOf(PropTypes.object).isRequired,
+    inputValue: PropTypes.string.isRequired,
+    getInputValue: PropTypes.func.isRequired
 }
 
 export default Page;

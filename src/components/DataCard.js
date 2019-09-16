@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class DataCard extends React.Component {
     render() {
@@ -20,6 +21,13 @@ class DataCard extends React.Component {
             </div> 
         );
     }
+}
+
+DataCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    passwords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    bank: PropTypes.objectOf(PropTypes.string).isRequired
 }
 
 export default DataCard;
